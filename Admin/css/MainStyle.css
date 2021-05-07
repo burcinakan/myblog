@@ -1,0 +1,96 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Calibri;
+    color: #808080;
+}
+
+.gecici {
+    background-color: #dddddd;
+}
+
+.anaTasiyici {
+    width: 1300px;
+    margin: 0 auto 0 auto;
+    border: 1px solid silver;
+    height: 1000px;
+}
+
+.Header {
+    height: 100px;
+    /*background-color: aquamarine;*/
+    border-bottom: 1px solid silver;
+    margin-bottom: 20px;
+}
+
+.kullanici {
+    float: right;
+    margin-top: 10px;
+}
+
+.icerikTasiyici {
+}
+
+.menuTasiyici {
+    width: 179px;
+    height: 500px;
+    float: left;
+    border-right: 1px solid silver;
+    padding: 0 10px 0 10px;
+}
+
+.icerik {
+    height: 500px;
+    width: 885px;
+    float: left;
+    padding-left: 15px;
+}
+
+.menuTasiyici ul {
+    list-style-type: none;
+}
+
+    .menuTasiyici ul a {
+        text-decoration: none;
+        color: #019a45;
+    }
+
+        .menuTasiyici ul a li {
+            padding: 5px 0 5px 0;
+            border-bottom: 1px solid silver;
+        }
+
+            .menuTasiyici ul a li:hover {
+                background-color: #e6e6e6;
+            }
+
+.tablo {
+    width: 100%;
+}
+
+    .tablo tr td {
+        padding: 5px;
+        margin: 0px;
+        border-bottom: 1px solid silver;
+    }
+
+.tablobaslik {
+    font-family: Calibri;
+    background-color: #ededed;
+    font-size: 15pt;
+}
+
+.durumaktif {
+    padding: 3px;
+    background-color: #8ef886;
+    color: #1aa30b;
+}
+
+.durumpasif {
+    padding: 3px;
+    background-color: #ededed;
+    color: silver;
+}

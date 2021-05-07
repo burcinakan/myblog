@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="BurcinAkan_Blog.MasterPage" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Burçin Akan Blog</title>
+    <link href="css/MainStyle.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style1 {
+            height: 150px;
+           
+            color:#422d2d;
+        }
+        .menu{
+            height:50px;
+            float:left;
+            margin-top:150px;
+            width:500px;
+            margin-left:100px;
+        }
+        .menu ul li{
+            color:white;
+            font:bold 15px arial,verdana;
+            float:left;
+            padding:4px 5px 4px 4px;
+            margin-left:10px;
+
+
+        }
+
+      
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="anaTasiyici">
+            <div class="headerTasiyici">
+               <a href="Default.aspx"><img style="width:100px; height:100px;" src="Resimler/brcnakn.png" /></a> 
+                <div class="login">
+                    <asp:Panel ID="pnl_girisYok" runat="server">
+                        <a href="GirisYap.aspx">Giriş Yap</a> | 
+                    <a href="UyeOl.aspx">Üyelik Oluştur</a>
+                    </asp:Panel>
+                    <asp:Panel ID="pnl_girisVar" runat="server" Visible="false">
+                        Merhaba<asp:Label ID="lbl_uye" runat="server"></asp:Label>
+                        <a href="#">Panelime Git</a>
+                        <asp:LinkButton ID="lbtn_cikisYap" runat="server" OnClick="lbtn_cikisYap_Click">Çıkış Yap</asp:LinkButton>                                             
+                    </asp:Panel>
+                </div> 
+
+                <div class="ara">
+                    
+                <asp:Button ID="Button1" runat="server" Text="Ara" OnClick="Button1_Click" />
+                <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div> 
+                <div style="clear: both;"></div>
+                <div  class="banner">
+                    <div id="tabs">
+                     <ul style="margin-left:200px;">
+    <li><a href="Default.aspx"><span>Anasayfa</span></a></li>
+    <li><a href="Default2.aspx"><span>Makaleler</span></a></li>
+    <li><a href="Hakkimizda.aspx"><span>Hakkında</span></a></li>
+    <li><a href="İletisim.aspx"><span>İletişim</span></a></li>
+    <li><a href="Default2.aspx"><span>Blog</span></a></li>
+    <li><a href="http://www.free-css.com/"><span>Forum </span></a></li>
+    <li><a rel="nofollow" target="_blank" href="http://www.exploding-boy.com/" title="explodingboy"><span>explodingboy</span></a></li>
+                    </ul>
+                        </div>
+                </div>
+            <div class="icerikTasiyici">
+                <div class="yanMenu">
+                    <h3 style="font-family: Calibri; color:#3c2424; margin: 5px 0px 10px 10px">Kategoriler</h3>
+                    <hr />
+                    <asp:ListView ID="lv_kategoriler" runat="server">
+                        <LayoutTemplate>
+                            <ul>
+                                <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
+                            </ul>
+                        </LayoutTemplate>
+                        <ItemTemplate>
+                            <li><a href='Default.aspx?kid=<%# Eval("ID") %>'><i class="fa fa-caret-right"></i>&nbsp;&nbsp; <%# Eval("Isim") %></a></li>
+                          
+                        </ItemTemplate>
+                    </asp:ListView>  
+                    
+                    <h3 style="font-family: Calibri; color:#3c2424; margin: 5px 0px 10px 10px">Duyurular</h3>
+                    <hr />
+                         <asp:ListView ID="lv_duyurular" runat="server">
+                        <LayoutTemplate>
+                            <ul>
+                                <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
+                            </ul>
+                        </LayoutTemplate>
+                        <ItemTemplate>
+                            <li><a href='Default.aspx?duyid=<%# Eval("ID") %>'><i class="fa fa-bell" aria-hidden="true"></i>
+&nbsp;&nbsp; <%# Eval("Baslik") %></a></li>
+                          
+                        </ItemTemplate>
+                    </asp:ListView>  
+            </div>
+                 <div class="icerik">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div> 
+               
+                
+              
+
+               
+                <div style="clear: both; margin-bottom:25px;"></div>
+                <div class="footer" style="font:bold 14px arial,verdana;">
+                   
+                        
+                        <img style="width:150px; height:150px;float:left; margin-left:50px;" src="Resimler/brcnakn.png" />
+                    
+                    <ul style="float:left; margin-left:200px; text-decoration:none; ">
+                        <li>Sosyal Medyamız <hr/></li>
+                        <li><a href="bayazilim.com">Twitter</a></li>
+                        <li><a href="Default2.aspx">Facebook</a></li>
+                        <li><a href="Hakkimizda.aspx">İnstagram</a></li>
+                        
+                    </ul>
+                    <ul style="float:left; margin-left:150px; ">
+                        <li>Sayfalar <hr/></li>
+                        <li><a href="Default.aspx">Anasayfa</a></li>
+                        <li><a href="Default2.aspx">Makaleler</a></li>
+                        <li><a href="Hakkimizda.aspx">Hakkımda</a></li>
+                        <li><a href="İletisim.aspx">İletişim</a></li>
+                    </ul>
+                    <h4 style="color:lightslategray; float:right; margin-top:130px; font-size:12px;">Copyright © 2021 Burçin Akan</h4>
+                </div>
+                </div>  
+            
+            </div>           
+    </form>
+</body>
+</html>

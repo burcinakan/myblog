@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="BurcinAkan_Blog.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Geç Kalanlar Blog - Admin</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/MainStyle.css" rel="stylesheet" />
+    <link href="css/formcss.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="anaTasiyici">
+            <div class="Header">
+                <img src="Resimler/Logo.jpg" width="150"style="margin-left: 10px;" />
+                <span class="kullanici">Merhaba
+                    <asp:Label ID="lbl_kullanici" runat="server"></asp:Label>
+                    | 
+                    <asp:LinkButton ID="lbl_cikis" runat="server" OnClick="lbl_cikis_Click">Çıkış Yap</asp:LinkButton>
+                </span>
+            </div>
+            <div class="icerikTasiyici">
+                <div class="menuTasiyici">
+                    <ul>
+                        <a href="Default.aspx">
+                            <li>Anasayfa</li>
+                        </a>
+                        <li><hr /></li>
+                        <a href="KategoriEkle.aspx">
+                            <li>Kategori Ekle</li>
+                        </a>
+                        <li><hr /></li>
+                        <a href="MakaleListele.aspx">
+                            <li>Makale Listele</li>
+                        </a>
+                        <li><hr /></li>
+                         <a href="MakaleEkle.aspx">
+                            <li>Makale Ekle</li>
+                        </a>
+                        <li><hr /></li>
+                       <a href="DuyuruEkle.aspx">
+                            <li>Duyuru Ekle</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="icerik">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
